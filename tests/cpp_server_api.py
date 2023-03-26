@@ -218,7 +218,7 @@ class CppServer:
 
     def request(self, method, header, url, **kwargs):
         try:
-            print(method, header, url)
+            print(method, url, header )
             print(f"{kwargs}\n")
 
             req = requests.Request(method, urljoin(self.url, url), headers=header, **kwargs).prepare()
