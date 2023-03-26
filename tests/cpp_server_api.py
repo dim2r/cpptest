@@ -224,7 +224,8 @@ class CppServer:
             req = requests.Request(method, urljoin(self.url, url), headers=header, **kwargs).prepare()
             with requests.Session() as session:
                 res = session.send(req)
-                print(res)
+                print(res.status_code)
+                print(res.text)
                 return res
         except Exception as ex:
             print(ex)
