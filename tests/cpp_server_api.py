@@ -226,6 +226,7 @@ class CppServer:
                 res = session.send(req)
                 print(res.status_code)
                 print(res.text)
+                print("\n\n")
                 return res
         except Exception as ex:
             print(ex)
