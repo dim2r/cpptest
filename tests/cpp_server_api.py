@@ -218,6 +218,8 @@ class CppServer:
 
     def request(self, method, header, url, **kwargs):
         try:
+            print(method, header, url)
+            print(f"{kwargs}")
             req = requests.Request(method, urljoin(self.url, url), headers=header, **kwargs).prepare()
             with requests.Session() as session:
                 return session.send(req)
